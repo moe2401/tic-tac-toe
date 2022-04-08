@@ -4,7 +4,7 @@
 document.onkeypress = function(evt){
     evt = evt || window.event;
     var modal = document.getElementsByClassName("modal")[0];
-    if(evt.keyCode === 27){
+    if (evt.keyCode === 27){
         modal.style.display = "none";
     }
 };
@@ -13,7 +13,7 @@ document.onkeypress = function(evt){
 //When the user clicks somewhere outside the modal dialog, close it
 window.onclick = function (evt){
     var modal = document.getElementsByClassName("modal")[0];
-    if(evt.target === modal){
+    if (evt.target === modal){
         modal.style.display = "none";
     }
 };
@@ -53,4 +53,30 @@ function intRandom(min, max){
     var rand = min + math.random()*(max+1- min);
     return math.floor(rand);
 }
+
+
+//global variable
+var moves = 0,
+winner = 0,
+x = 1,
+o = 3,
+player = x,
+computer = o,
+whoseTurn = x,
+gameOver = false,
+score = {
+    ties: 0,
+    player: 0,
+    computer: 0
+},
+
+xText = "<span class=\"x\">&times;</class>",
+oText = "<span class=\"o\">o</class>",
+playerText = xText,
+computerText = oText,
+difficulty = 1,
+myGrid = null;
+
+
+
 
